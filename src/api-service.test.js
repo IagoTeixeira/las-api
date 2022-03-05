@@ -9,15 +9,17 @@
 
 // Utilize a lib node-fetch em sua versão 2 - https://www.npmjs.com/package/node-fetch
 
-// const PRODUTOS_MOCK = require("../mocks/produtos.json");
+//const PRODUTOS_MOCK = require("../mocks/produtos.json");
 // const CATEGORIAS_MOCK = require("../mocks/categorias.json");
 // const CUPONS_MOCK = require("../mocks/cupons.json");
+
+
 
 describe("Essencial", () => {
   // Crie uma função e o teste desta função, que lista os produtos a partir da API e retorna um JSON
   // com esta lista de produtos
   // test: "Deve ter uma função que lista os produtos."
-
+ 
   // Crie uma função e o teste desta função, que lista as categorias a partir da API e retorna um JSON
   // com esta lista de categorias
   // test: "Deve ter uma função que lista as categorias."
