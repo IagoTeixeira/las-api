@@ -10,7 +10,7 @@ class TipoVenda {
 
   adicionar(tipoVenda) {
     const descricao = tipoVenda.descricao;
-    if (descricao.length >= 5) {
+    if (descricao.length >= 3) {
       return repositorios.adicionar(tipoVenda);
     } else {
       throw new Error({
@@ -21,7 +21,7 @@ class TipoVenda {
 
   atualizar(id, tipoVenda) {
     const descricao = tipoVenda.descricao;
-    if (descricao.length >= 5) {
+    if (descricao.length >= 3) {
       return repositorios.alterar(id, tipoVenda);
     } else {
       throw new Error({

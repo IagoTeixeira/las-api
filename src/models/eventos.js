@@ -10,7 +10,7 @@ const hoje = moment().format("YYYY-MM-DD");
 class Eventos {
   async listar() {
     const eventos = await repositorios.listar();
-    return this.insereStatus(eventos[0]);
+    return eventos.map((eventos) => this.insereStatus(eventos))[0];
   }
   buscarPorId(id) {
     return repositorios.buscarPorId(id);
@@ -21,7 +21,7 @@ class Eventos {
   }
 
   async atualizar(evento, id) {
-    const dataValida = this.isDatasValidas(evento.dataInicio, evento.dataFim);
+    const dataValida = this.isDatasValidas(evento);
     const validarUrl = await validarURLFoto(evento.urlFoto);
     if (validarUrl && dataValida) {
       return repositorios.atualizar(evento, id);

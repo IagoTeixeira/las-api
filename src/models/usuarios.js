@@ -1,5 +1,5 @@
 const repositorios = require("../repositorios/usuario");
-const { validarNome } = require("./validações");
+const { validarNome, validarCpf } = require("./validações");
 class Usuarios {
   listar() {
     return repositorios.listar();
@@ -27,6 +27,44 @@ class Usuarios {
 
   buscarPorNome(nome) {
     return repositorios.buscarPorNome(nome);
+  }
+
+  //DADOS PESSOAIS
+  listarDadosPessoais(id) {
+    return repositorios.listarDadosPessoais(id);
+  }
+
+  alterarDadosPessoais(id, valores) {
+    if (!validarCpf(valores.cpf)) {
+      return Promise.reject({ message: "CPF INVÁLIDO" });
+    }
+    return repositorios.alterarDadosPessoais(id, valores);
+  }
+
+  //Contatos
+  listarContatos(id) {
+    return repositorios.listarContatos(id);
+  }
+
+  alterarContatos(id, valores) {
+    return repositorios.alterarContatos(id, valores);
+  }
+
+  //Endereço
+  listarEndereco(id) {
+    return repositorios.listarEndereco(id);
+  }
+
+  alterarEndereco(id, valores) {
+    return repositorios.alterarEndereco(id, valores);
+  }
+
+  //Senha
+  alterarSenha(id, valores) {
+    if (valores.senha.length < 8) {
+      return Promise.reject({ message: "Senha inválida" });
+    }
+    return repositorios.alterarSenha(id, valores);
   }
 }
 

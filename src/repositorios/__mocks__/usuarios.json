@@ -1,0 +1,64 @@
+[
+  {
+    "id": 1,
+    "nome": "Pietro",
+    "urlFotoPerfil": "https://www.randomuser.me/api/portraits/men/91.jpg"
+  },
+  {
+    "id": 2,
+    "nome": "Max",
+    "urlFotoPerfil": "https://www.randomuser.me/api/portraits/men/91.jpg"
+  },
+  {
+    "id": 5,
+    "nome": "Michael Jackson",
+    "urlFotoPerfil": "https://www.randomuser.me/api/portraits/men/91.jpg"
+  },
+  {
+    "id": 7,
+    "nome": "Jason",
+    "urlFotoPerfil": "https://www.randomuser.me/api/portraits/men/91.jpg"
+  },
+  {
+    "id": 14,
+    "nome": "Acm Neto",
+    "urlFotoPerfil": "https://www.randomuser.me/api/portraits/men/91.jpg"
+  },
+  {
+    "id": 17,
+    "nome": "Acm ",
+    "urlFotoPerfil": "https://www.randomuser.me/api/portraits/men/91.jpg"
+  },
+  { "id": 18, "nome": "Acm SP", "urlFotoPerfil": "https://wwxxxx" },
+  {
+    "id": 20,
+    "nome": "Acm RJ",
+    "urlFotoPerfil": "http://enderecoinvalido.com.br\n"
+  },
+  {
+    "id": 22,
+    "telefone": 71998256431,
+    "celular": 71998256431,
+    "email": "iadaog@gamail.com"
+  },
+
+  {
+    "id": 23,
+    "nomeCompleto": "Maxwell Andrade",
+    "dataNascimento": "08/10/1882",
+    "rg": "1231546546",
+    "cpf": "12131556063"
+  },
+  {
+    "id": 24,
+    "cep": "40285648",
+    "endereco": "Av pocoio",
+    "numero": 28,
+    "complemento": "casa",
+    "bairro": "Mota"
+  },
+  {
+    "id": 25,
+    "senha": "asdaspdo"
+  }
+]

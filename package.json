@@ -41,19 +41,20 @@
     "eslint-plugin-promise": "^5.2.0",
     "jest": "^27.4.5",
     "pre-commit": "^1.2.2",
-    "prettier": "^2.5.1"
+    "prettier": "^2.5.1",
+    "supertest": "^6.2.3"
   },
   "pre-commit": [
     "lint"
   ],
   "jest": {
-    "collectCoverage": false,
+    "collectCoverage": true,
     "collectCoverageFrom": [
       "./src/**"
     ],
     "coverageThreshold": {
       "global": {
-        "lines": 90
+        "lines": 50
       }
     }
   },

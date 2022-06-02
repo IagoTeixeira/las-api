@@ -4,13 +4,17 @@ module.exports = (app) => {
   app.get("/tipos-vendas/:id", (req, res, next) => {
     const id = parseInt(req.params.id);
     TipoVenda.listarPorId(id)
-      .then((tipovenda) => res.json(tipovenda))
+      .then((tipovenda) =>
+        tipovenda ? res.json(tipovenda) : res.status(404).send()
+      )
       .catch((erro) => next(erro));
   });
 
   app.get("/tipos-vendas", (req, res, next) => {
     TipoVenda.listar()
-      .then((tipovenda) => res.json(tipovenda))
+      .then((tipovenda) =>
+        tipovenda ? res.json(tipovenda) : res.status(404).send()
+      )
       .catch((erro) => next(erro));
   });
 
@@ -25,7 +29,9 @@ module.exports = (app) => {
     const id = parseInt(req.params.id);
     const tipovenda = req.body;
     TipoVenda.atualizar(id, tipovenda)
-      .then((tipovenda) => res.json(tipovenda))
+      .then((tipovenda) =>
+        tipovenda ? res.json(tipovenda) : res.status(404).send()
+      )
       .catch((erro) => next(erro));
   });
 

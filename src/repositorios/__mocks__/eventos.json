@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "nome": "carnaval",
+    "descricao": "uma festa bonita",
+    "urlFoto": "https://www.randomuser.me/api/portraits/men/91.jpg",
+    "dataInicio": "15/02/2022",
+    "dataFim": "15/03/2022",
+    "status": "agendado"
+  }
+]

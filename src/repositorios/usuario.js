@@ -2,13 +2,13 @@ const executaQuery = require("../infraestrutura/database/queries");
 
 class Usuarios {
   listar() {
-    const sql = "SELECT * FROM Usuarios";
+    const sql = "SELECT id, nome, urlFoto FROM Usuarios";
     return executaQuery(sql);
   }
 
   buscarPorId(id) {
-    const sql = "SELECT * FROM Usuarios WHERE id = ?";
-    return executaQuery(sql, id)[0];
+    const sql = "SELECT id, nome, urlFoto FROM Usuarios WHERE id = ?";
+    return executaQuery(sql, id).then((elemento) => elemento[0]);
   }
 
   adicionar(usuario) {
@@ -17,7 +17,7 @@ class Usuarios {
   }
 
   async validarNomeUsuarioNaoUtilizado(nome) {
-    const sql = "SELECT * FROM Usuarios WHERE nome = ?";
+    const sql = "SELECT id, nome, urlFoto FROM Usuarios WHERE nome = ?";
     return executaQuery(sql, nome);
   }
 
@@ -32,8 +32,45 @@ class Usuarios {
   }
 
   buscarPorNome(nome) {
-    const sql = "SELECT * FROM Usuarios WHERE nome like ?";
-    return executaQuery(sql, nome);
+    const sql = "SELECT id, nome, urlFoto FROM Usuarios WHERE nome like ?";
+    return executaQuery(sql, nome).then((elemento) => elemento[0]);
+  }
+
+  listarDadosPessoais(id) {
+    const sql =
+      "SELECT nomeCompleto, dataNascimento, rg, cpf FROM Usuarios WHERE id = ?";
+    return executaQuery(sql, id).then((elemento) => elemento[0]);
+  }
+
+  alterarDadosPessoais(id, valores) {
+    const sql = "UPDATE Usuarios SET ? WHERE id = ?";
+    return executaQuery(sql, [valores, id]);
+  }
+
+  listarContatos(id) {
+    const sql = "SELECT telefone, celular, email FROM Usuarios WHERE id = ?";
+    return executaQuery(sql, id).then((elemento) => elemento[0]);
+  }
+
+  alterarContatos(id, valores) {
+    const sql = "UPDATE Usuarios SET ? WHERE id = ?";
+    return executaQuery(sql, [valores, id]);
+  }
+
+  listarEndereco(id) {
+    const sql =
+      "SELECT cep, endereco, numero, complemento, bairro FROM Usuarios WHERE id = ?";
+    return executaQuery(sql, id).then((elemento) => elemento[0]);
+  }
+
+  alterarEndereco(id, valores) {
+    const sql = "UPDATE Usuarios SET ? WHERE id = ?";
+    return executaQuery(sql, [valores, id]);
+  }
+
+  alterarSenha(id, valores) {
+    const sql = "UPDATE Usuarios SET ? WHERE id = ?";
+    return executaQuery(sql, [valores, id]);
   }
 }
 
