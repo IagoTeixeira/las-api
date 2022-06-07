@@ -2,7 +2,7 @@ const executaQuery = require("../infraestrutura/database/queries");
 
 class Usuarios {
   listar() {
-    const sql = "SELECT id, nome, urlFoto FROM Usuarios";
+    const sql = "SELECT id, nome, urlFotoPerfil FROM Usuarios";
     return executaQuery(sql);
   }
 
@@ -17,7 +17,7 @@ class Usuarios {
   }
 
   async validarNomeUsuarioNaoUtilizado(nome) {
-    const sql = "SELECT id, nome, urlFoto FROM Usuarios WHERE nome = ?";
+    const sql = "SELECT nome FROM Usuarios WHERE nome = ?";
     return executaQuery(sql, nome);
   }
 
@@ -32,7 +32,8 @@ class Usuarios {
   }
 
   buscarPorNome(nome) {
-    const sql = "SELECT id, nome, urlFoto FROM Usuarios WHERE nome like ?";
+    const sql =
+      "SELECT id, nome, urlFotoPerfil FROM Usuarios WHERE nome like ?";
     return executaQuery(sql, nome).then((elemento) => elemento[0]);
   }
 
